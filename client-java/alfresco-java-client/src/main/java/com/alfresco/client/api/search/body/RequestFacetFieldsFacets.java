@@ -14,6 +14,9 @@ public class RequestFacetFieldsFacets
     @SerializedName("field")
     private String field = null;
 
+    @SerializedName("label")
+    private String label = null;
+
     @SerializedName("prefix")
     private String prefix = null;
 
@@ -107,6 +110,28 @@ public class RequestFacetFieldsFacets
     {
         this.field = field;
     }
+
+
+    public RequestFacetFieldsFacets label(String label)
+    {
+        this.label = label;
+        return this;
+    }
+
+
+    /**
+     * The label field
+     *
+     * @return label
+     **/
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
 
     public RequestFacetFieldsFacets prefix(String prefix)
     {
@@ -314,6 +339,7 @@ public class RequestFacetFieldsFacets
         if (o == null || getClass() != o.getClass()) { return false; }
         RequestFacetFieldsFacets requestFacetFieldsFacets = (RequestFacetFieldsFacets) o;
         return Objects.equals(this.field, requestFacetFieldsFacets.field)
+                && Objects.equals(this.label, requestFacetFieldsFacets.label)
                 && Objects.equals(this.prefix, requestFacetFieldsFacets.prefix)
                 && Objects.equals(this.sort, requestFacetFieldsFacets.sort)
                 && Objects.equals(this.method, requestFacetFieldsFacets.method)
@@ -339,6 +365,7 @@ public class RequestFacetFieldsFacets
         sb.append("class RequestFacetFieldsFacets {\n");
 
         sb.append("    field: ").append(toIndentedString(field)).append("\n");
+        sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
         sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
